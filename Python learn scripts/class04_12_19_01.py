@@ -21,6 +21,3 @@ class Display_and_invert (text):
         self.name = name
     def showtxt (self):
         print ( "My Name is",self.name)
-        
-
-    
