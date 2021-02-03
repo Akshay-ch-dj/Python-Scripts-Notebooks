@@ -64,7 +64,7 @@ def login():
             usr = Users(user, "")
             # Add the usr model to the database
             db.session.add(usr)
-            db.session.commit()  # Needed to save it to db same as 'save' in django
+            db.session.commit()  # save it to db same as 'save' in django
 
         flash("Login Successful!", "info")
         # Just redirect to the user page

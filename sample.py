@@ -1,18 +1,16 @@
-import os
-from dotenv import load_dotenv, find_dotenv
+def gridTraveller(m, n, memo={}):
+    # Check if the tuple-(m,n) exists in the dictionary as key
+    # if yes return the value mapped to it
+    if (m, n) in memo:
+        return memo[(m, n)]
 
-load_dotenv(find_dotenv())
+    if (m == 1 and n == 1):
+        return 1
+    if (m == 0 or n == 0):
+        return 0
+    memo[(m, n)] = gridTraveller(m-1, n, memo) + gridTraveller(m, n-1, memo)
+    return memo[(m, n)]
 
-# For django BASE_DIR is the path where manage.py lies
-# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# Get env using os.path.join()
 
-# env_dir = os.path.join(BASE_DIR, 'django-config.env')
-# env_dir = dotenv.find_dotenv('django-config.env')
-# print(env_dir)
-
-# dotenv.load_dotenv(env_dir)
-# SECRET_KEY = os.environ['SECRET_KEY']
-SECRET_KEY = os.getenv('SECRET_KEY')
-
-print(SECRET_KEY)
+# print(gridTraveller(3, 3))
+print(gridTraveller(18, 18))
