@@ -1,0 +1,9 @@
+b2blaze==0.2.1
+certifi==2018.11.29
+chardet==3.0.4
+idna==2.7
+mattermost-bot==1.0.20
+requests==2.19.1
+six==1.11.0
+urllib3==1.23
+websocket-client==0.54.0
