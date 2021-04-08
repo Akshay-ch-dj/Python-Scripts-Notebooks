@@ -66,6 +66,6 @@ async def on_message(message):
 
 
 # Add an api
-BOT_TOKEN = "ODI5MDQxNzgwOTEyNjg1MDU2.YGyXUw.jlIuDsdHxYU0ixTfE_ThuvlznVk"
+
 # Finally run the bot, need the identification/password which is the token
 client.run(BOT_TOKEN)
