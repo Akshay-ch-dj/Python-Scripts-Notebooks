@@ -2,7 +2,20 @@ import os
 import discord
 import requests
 import json
+from mysql.connector import connect
+from dotenv import load_dotenv
 # from discord.ext import commands
+
+# env files
+load_dotenv("bot.env")
+
+# mysql connect
+bot_db = connect(
+    host=os.getenv("HOST"),
+    user=os.getenv("BOT_USER"),
+    password=os.getenv("PASSWORD"),
+    database=os.getenv("DATABASE")
+)
 
 # Part of discord library client created
 client = discord.Client()
@@ -68,4 +81,4 @@ async def on_message(message):
 # Add an api
 
 # Finally run the bot, need the identification/password which is the token
-client.run(BOT_TOKEN)
+client.run(os.getenv("BOT_TOKEN"))
